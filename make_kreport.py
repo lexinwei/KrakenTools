@@ -117,7 +117,7 @@ def main():
             sys.stdout.write('\r\t%0.3f million reads processed' % float(read_count/1000000.))
             sys.stdout.flush()
         l_vals = line.strip().split('\t')
-        taxid = re.findall('(\d+)\)$', l_vals[2])
+        taxid = re.findall('(\d+)\)$', l_vals[2])[0]
         count = 1
         #If using read length instead of read counts
         if args.use_read_len:
